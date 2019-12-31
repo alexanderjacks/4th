@@ -3,30 +3,27 @@ import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
 import Title from 'components/title';
-import Gallery from 'components/gallery';
-import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
+import Twitter from 'components/twitter';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout>
     <Box>
-      <Title as="h2" size="large">
+      <Title as="h3" size="large">
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
+      {/* needs refactoring into Gallery, w/ json for data */}
+      <Twitter name="SenJohnKennedy" screenName="SenJohnKennedy" />
+      <Twitter name="Shelby" screenName="SenShelby" />
+      <Twitter name="SenRonJohnson" screenName="SenRonJohnson" />
+      <Twitter name="SteveDaines" screenName="SteveDaines" />
+      <Twitter name="SenJohnHoeven" screenName="SenJohnHoeven" />
+      <Twitter name="JerryMoran" screenName="JerryMoran" />
+      <Twitter name="SenJohnThune" screenName="SenJohnThune" />
+      <Twitter name="RepKayGranger" screenName="RepKayGranger" />
+
     </Box>
-    <Gallery items={data.homeJson.gallery} />
     <div style={{ height: '50vh' }} />
-    <IOExample />
   </Layout>
 );
 
